@@ -1,0 +1,9 @@
+## Ignore data files
+*.asv
+
+# Data files
+[Dd]ata/
+
+# Releases
+Releases/
+
