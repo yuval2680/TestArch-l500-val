@@ -51,6 +51,8 @@ dth_x_mat_stack_adj = dth_x_mat_stack - mean_func_y_v;
 mean_func_x = mean(t_v);
 t_adj = t_v' - mean_func_x;
 slope_v = t_adj \ dth_x_mat_stack_adj';
+toc
+
 pp = polyfit(th_x_v, slope_v, 1);
 offset = pp(2);
 scale = pp(1)*100;

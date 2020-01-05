@@ -1,17 +1,18 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="2350275352" file="C:\GitHub\TesArch-l500-val\MatlabDLL\Dev\cb_metrics.prj" location="C:\GitHub\TesArch-l500-val\MatlabDLL\Dev" name="cb_metrics" preferred-package-location="C:\GitHub\TesArch-l500-val\MatlabDLL\Dev\cb_metrics\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.library" target-name="Library Compiler">
+  <configuration build-checksum="2234819711" file="C:\Users\admin\Documents\MATLAB\Yuval\Deployment\L515_val_dll\GitHub\TesArch-l500-val\MatlabDLL\Dev\cb_metrics.prj" location="C:\Users\admin\Documents\MATLAB\Yuval\Deployment\L515_val_dll\GitHub\TesArch-l500-val\MatlabDLL\Dev" name="cb_metrics" preferred-package-location="C:\GitHub\TesArch-l500-val\MatlabDLL\Dev\cb_metrics\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.library" target-name="Library Compiler">
     <param.appname>cb_metrics</param.appname>
     <param.icon />
     <param.icons />
-    <param.version>1.0</param.version>
-    <param.authnamewatermark />
-    <param.email />
-    <param.company />
-    <param.summary />
-    <param.description />
+    <param.version>1.2</param.version>
+    <param.authnamewatermark>Yuval Shapira</param.authnamewatermark>
+    <param.email>yuval.shapira@intel.com</param.email>
+    <param.company>Intel Corp.</param.company>
+    <param.summary>Checker board L515 VAL tester TestersArch metrics DLL.</param.summary>
+    <param.description>1) Added exception handling in cb_metrics function.
+2) Added z_drift function</param.description>
     <param.screenshot />
     <param.guid />
-    <param.installpath.string>\cb_metrics\</param.installpath.string>
+    <param.installpath.string>\Intel Corp.\cb_metrics\</param.installpath.string>
     <param.installpath.combo>option.installpath.appdata</param.installpath.combo>
     <param.logo />
     <param.install.notes />
@@ -24,7 +25,7 @@
     <param.user.defined.mcr.options>".\AssemblyInfo.cs"</param.user.defined.mcr.options>
     <param.target.type>subtarget.net.component</param.target.type>
     <param.support.packages />
-    <param.namespace />
+    <param.namespace>TestersArch</param.namespace>
     <param.classorg />
     <param.web.mcr>true</param.web.mcr>
     <param.package.mcr>false</param.package.mcr>
@@ -42,21 +43,15 @@
     <param.net.tsa.enable>false</param.net.tsa.enable>
     <param.net.tsa.assembly />
     <param.net.tsa.interface />
-    <param.net.tsa.namespace />
-    <param.net.tsa.superclass>testers_arch</param.net.tsa.superclass>
+    <param.net.tsa.namespace>TestersArch</param.net.tsa.namespace>
+    <param.net.tsa.superclass>CBMetrics</param.net.tsa.superclass>
     <param.net.tsa.metadata />
-    <param.net.tsa.metadata.assembly>C:\GitHub\TesArch-l500-val\MatlabDLL\Dev</param.net.tsa.metadata.assembly>
+    <param.net.tsa.metadata.assembly>C:\Users\admin\Documents\MATLAB</param.net.tsa.metadata.assembly>
     <param.net.saved.interface />
     <param.cpp.api>option.cpp.all</param.cpp.api>
     <unset>
       <param.icon />
       <param.icons />
-      <param.version />
-      <param.authnamewatermark />
-      <param.email />
-      <param.company />
-      <param.summary />
-      <param.description />
       <param.screenshot />
       <param.guid />
       <param.installpath.string />
@@ -69,7 +64,6 @@
       <param.logdir />
       <param.enable.clean.build />
       <param.support.packages />
-      <param.namespace />
       <param.classorg />
       <param.web.mcr />
       <param.package.mcr />
@@ -96,52 +90,72 @@
     </unset>
     <fileset.exports>
       <file>${PROJECT_ROOT}\Wrapper\cb_metrics.m</file>
-      <file>C:\Users\ypshapir\Documents\TFS_IVCAM\SW\Testers\IV2.0\PRJ\MatlabDLL\Dev\Wrapper\save_figure.m</file>
+      <file>${PROJECT_ROOT}\Wrapper\z_drift.m</file>
+      <file>C:\Users\admin\Documents\MATLAB\Yuval\Deployment\L515_val_dll\Users\ypshapir\Documents\TFS_IVCAM\SW\Testers\IV2.0\PRJ\MatlabDLL\Dev\Wrapper\save_figure.m</file>
     </fileset.exports>
     <fileset.classes>
       <entity.package name="">
-        <entity.class name="testers_arch">
+        <entity.class name="CBMetrics">
           <file>${PROJECT_ROOT}\Wrapper\cb_metrics.m</file>
-          <file>C:\Users\ypshapir\Documents\TFS_IVCAM\SW\Testers\IV2.0\PRJ\MatlabDLL\Dev\Wrapper\save_figure.m</file>
+          <file>C:\Users\admin\Documents\MATLAB\Yuval\Deployment\L515_val_dll\Users\ypshapir\Documents\TFS_IVCAM\SW\Testers\IV2.0\PRJ\MatlabDLL\Dev\Wrapper\save_figure.m</file>
+          <file>${PROJECT_ROOT}\Wrapper\z_drift.m</file>
         </entity.class>
       </entity.package>
     </fileset.classes>
     <fileset.resources />
     <fileset.depfun>
       <file>${PROJECT_ROOT}\Stand_Alone\cb_metrics_sa.m</file>
-      <file>C:\GitHub\TestArch-ds5-prj\MatlabDLL\Dev\Utils\cur_time_stamp_ut.m</file>
-      <file>C:\GitHub\TestArch-ds5-prj\MatlabDLL\Dev\Utils\hfig_gen_ut.m</file>
+      <file>${PROJECT_ROOT}\Stand_Alone\z_drift_sa.m</file>
+      <file>C:\Users\admin\Documents\MATLAB\Yuval\Deployment\L515_val_dll\GitHub\TestArch-ds5-prj\MatlabDLL\Dev\Utils\cur_time_stamp_ut.m</file>
+      <file>C:\Users\admin\Documents\MATLAB\Yuval\Deployment\L515_val_dll\GitHub\TestArch-ds5-prj\MatlabDLL\Dev\Utils\hfig_gen_ut.m</file>
     </fileset.depfun>
     <fileset.package />
-    <fileset.examples />
-    <fileset.documentation />
     <build-deliverables>
-      <file location="${PROJECT_ROOT}\cb_metrics\for_testing" name="cb_metrics_overview.html" optional="false">C:\GitHub\TesArch-l500-val\MatlabDLL\Dev\cb_metrics\for_testing\cb_metrics_overview.html</file>
-      <file location="${PROJECT_ROOT}\cb_metrics\for_testing" name="cb_metrics.dll" optional="false">C:\GitHub\TesArch-l500-val\MatlabDLL\Dev\cb_metrics\for_testing\cb_metrics.dll</file>
-      <file location="${PROJECT_ROOT}\cb_metrics\for_testing" name="cb_metricsNative.dll" optional="false">C:\GitHub\TesArch-l500-val\MatlabDLL\Dev\cb_metrics\for_testing\cb_metricsNative.dll</file>
+      <file location="${PROJECT_ROOT}\cb_metrics\for_testing" name="TestersArchNative.dll" optional="false">C:\Users\admin\Documents\MATLAB\Yuval\Deployment\L515_val_dll\GitHub\TesArch-l500-val\MatlabDLL\Dev\cb_metrics\for_testing\TestersArchNative.dll</file>
+      <file location="${PROJECT_ROOT}\cb_metrics\for_testing" name="TestersArch.dll" optional="false">C:\Users\admin\Documents\MATLAB\Yuval\Deployment\L515_val_dll\GitHub\TesArch-l500-val\MatlabDLL\Dev\cb_metrics\for_testing\TestersArch.dll</file>
+      <file location="${PROJECT_ROOT}\cb_metrics\for_testing" name="TestersArch_overview.html" optional="false">C:\Users\admin\Documents\MATLAB\Yuval\Deployment\L515_val_dll\GitHub\TesArch-l500-val\MatlabDLL\Dev\cb_metrics\for_testing\TestersArch_overview.html</file>
+      <file location="${PROJECT_ROOT}\cb_metrics\for_testing" name="readme.txt" optional="true">C:\Users\admin\Documents\MATLAB\Yuval\Deployment\L515_val_dll\GitHub\TesArch-l500-val\MatlabDLL\Dev\cb_metrics\for_testing\readme.txt</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>C:\Program Files\MATLAB\R2019a</root>
+      <root>C:\Program Files\MATLAB\R2018a</root>
       <toolboxes>
-        <toolbox name="matlabcoder" />
         <toolbox name="fixedpoint" />
-        <toolbox name="neuralnetwork" />
+        <toolbox name="matlabcoder" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="polyspacebugfinder" />
       </toolboxes>
-      <toolbox>
-        <matlabcoder>
-          <enabled>true</enabled>
-        </matlabcoder>
-      </toolbox>
       <toolbox>
         <fixedpoint>
           <enabled>true</enabled>
         </fixedpoint>
       </toolbox>
       <toolbox>
-        <neuralnetwork>
+        <matlabcoder>
           <enabled>true</enabled>
-        </neuralnetwork>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <polyspacebugfinder>
+          <enabled>true</enabled>
+        </polyspacebugfinder>
       </toolbox>
     </matlab>
     <platform>

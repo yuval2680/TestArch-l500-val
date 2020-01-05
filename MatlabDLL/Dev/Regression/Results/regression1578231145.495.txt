@@ -1,0 +1,32 @@
+Initializing...
+CB metric...
+
+Result = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+        jitter_mean_x: 0.0335
+        jitter_mean_y: 0.0116
+         jitter_max_x: 0.0397
+         jitter_max_y: 0.0212
+       drift_offset_x: 0.0012
+       drift_offset_y: 1.6119e-04
+        drift_scale_x: -0.0016
+        drift_scale_y: -5.2830e-04
+        zenith_tilt_x: 1.9924
+        zenith_tilt_y: -0.6381
+        zenith_tilt_r: 2.0922
+      MatlabErrorCode: 0
+    MatlabErrorString: ''
+
+Z-drift metric...
+
+Result = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+        z_drift_slope: -2.7914e-04
+       z_drift_offset: 676.4250
+      MatlabErrorCode: 0
+    MatlabErrorString: ''
+

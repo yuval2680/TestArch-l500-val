@@ -1,9 +1,13 @@
-## Ignore data files
-*.asv
+## Ignore temporaly files
+*.asv 
 
-# Data files
+## Ignore image files
+*.fig 
+*.png
+
+# Ignore data files
 [Dd]ata/
 
-# Releases
+# Ignore Releases
 Releases/
 

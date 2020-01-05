@@ -1,4 +1,4 @@
-function [Result, th_x_v, slope_v, pp] = cb_metrics_sa(t_v, x_mat, y_mat, dTarget, szChecker, xCent, show_flag, dummy_flag)
+function [Result, th_x_v, slope_v, pp] = cb_metrics_sa(t_v, x_mat, y_mat, dTarget, szChecker, xCent, show_flag)
 %***********************************************************************************
 % Function description: This function obtains checker-board corners' locations over
 % time and generated temperature-induced and jitter metrics.
@@ -17,37 +17,20 @@ function [Result, th_x_v, slope_v, pp] = cb_metrics_sa(t_v, x_mat, y_mat, dTarge
 % szChecker: Double. Checker size.
 % xCent: Double. Central pixel x-location.
 % show_flag: Double. If set to 1, the function displays relevant graphs. Else set to 0.
-% dummy_flag: Double. If set to 1, the function does nothing. Else set to 0.
 % Output:
 % Result.jitter_mean: Double. Jitter in x-direction, averaged over corners [deg]
 % Result.jitter_max: Double. Jitter in x-direction, worst corner result [deg]
-% Result.drift_offset: Double. (Thermal) drift in x-direction - offset value [deg].
-% Result.drift_scale: Double. (Thermal) drift in x-direction - scale value [pxl].
+% Result.drift_offset: Double. (Thermal) drift in x-direction - offset value [deg/degC].
+% Result.drift_scale: Double. (Thermal) drift in x-direction - scale value [%/degC].
 % Result.zenith_tilt: Double. Zenith x-tilt as estimated from the center checker [deg]
 % th_x_v: Double. vector of corners' locations (for visualization).
 % slope_v: Double. vector of corners' shifts (for visualization).
 % pp: Double. Polynomial fit coefficients (for visualization).
 %************************************************************************************
-    Result.jitter_mean = 0;
-    Result.jitter_max = 0;
-    Result.drift_offset = 0;
-    Result.drift_scale = 0;
-    Result.zenith_tilt = 0;
-    Result.MatlabErrorCode = 0;
-    Result.MatlabErrorString = '';
-
-    if dummy_flag
-        dump_file_name = [mfilename, cur_time_stamp_ut, '.mat'];
-        save(['C:\Dump\', dump_file_name]);
-        return;        
-    end
-
     sz = size(x_mat);
     
     dx_mat_hz = x_mat(:, 1:end-1, :) - x_mat(:, 2:end, :);
-    dx_mat_vr = x_mat(1:end-1, :, :) - x_mat(2:end, :, :);
     dy_mat_hz = y_mat(:, 1:end-1, :) - y_mat(:, 2:end, :);
-    dy_mat_vr = y_mat(1:end-1, :, :) - y_mat(2:end, :, :);
 
     r_mat_hz = sqrt(dx_mat_hz.^2 + dy_mat_hz.^2);
 
@@ -81,7 +64,7 @@ function [Result, th_x_v, slope_v, pp] = cb_metrics_sa(t_v, x_mat, y_mat, dTarge
     scale = pp(1)*100;
 
     %% jitter metrics
-    fit_mat = kron(t_adj', slope_v');
+    fit_mat = (t_adj*slope_v)'; %kron(t_adj', slope_v');
     resid_dth = dth_x_mat_stack_adj - fit_mat;
     resid_std_v = squeeze(std(resid_dth, [], 2));
     jitter_mean = mean(resid_std_v);
