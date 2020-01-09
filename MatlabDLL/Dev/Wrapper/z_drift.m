@@ -6,8 +6,8 @@ function Result = z_drift(t_v, z_im_cell, z2mm, show_flag, dummy_flag)
 % Result = z_drift(t_v, z_mat_cell, z2mm, show_flag, dummy_flag)
 % Input:
 % t_v: Double.  1 x T vector. Temperature readings that correspond to each set of corners [degC].
-% z_im_cell: Cell array. Size(1, T) cell array with M x N matrixes. Gets corners' x-locations, where M is
-% the image height, N is the image width and T is the frames dimention (over time).
+% z_im_cell: Cell array. Size(1, T) cell array with M x N matrices. Gets corners' x-locations, where M is
+% the image height, N is the image width and T is the frames dimension (over time).
 % z2mm: Double. Conversion factor from z-materices values to real-world
 % distances in mm.
 % show_flag: Double. If set to 1, the function displays relevant graphs. Else set to 0.
@@ -16,7 +16,7 @@ function Result = z_drift(t_v, z_im_cell, z2mm, show_flag, dummy_flag)
 % Result.z_drift_slope: Double. (Thermal) drift in z-direction - slope [mm/degC].
 % Result.z_drift_offset: Double. (Thermal) drift in z-direction - offset [mm].
 % Result.MatlabErrorCode: Double. Contains the error code (0 if no error exists).
-% Result.MatlabErrorString: String. Contains the error description (‘none’ is no error exists).
+% Result.MatlabErrorString: String. Contains the error description ('' is no error exists).
 %************************************************************************************
     Result.z_drift_slope = 0;
     Result.z_drift_offset = 0;
